@@ -1,0 +1,6 @@
+---
+- name: run the RHEL9 STIG role
+  hosts: managed
+  gather_facts: yes
+  roles:
+    - rhel9STIG

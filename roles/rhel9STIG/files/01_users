@@ -1,0 +1,11 @@
+#!/usr/bin/sh -e
+cat << EOF
+if [ -f \${prefix}/user.cfg ]; then
+  source \${prefix}/user.cfg
+  if [ -n "\${GRUB2_PASSWORD}" ]; then
+    set superusers="admin"
+    export superusers
+    password_pbkdf2 root $6$mysecretsalt$LoEvUIvlpZrRzRk.eWITDCc.U457Tba4xFQeEQ/.2tCSTzEWOOsskT8zRszlmHLElJZqsrUlKbzu84Xm42dEZ.
+  fi
+fi
+EOF
